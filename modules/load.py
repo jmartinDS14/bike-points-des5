@@ -27,9 +27,10 @@ def load_function(data_dir, AWS_ACCESS_KEY, AWS_SECRET_KEY, bucket_name, logger)
             print('got s3_filename')
             try:
                 s3_client.upload_file(file,bucket_name,s3_filename)
+                print(f'{file} uploaded successfully')
                 os.remove(file)
                 logger.info(f'{file} uploaded successfully')
-                print(f'{file} uploaded successfully')
+                
             except Exception as e:
                 print(e)
                 logger.error(f'Error uploading: {e}')
