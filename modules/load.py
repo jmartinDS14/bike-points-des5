@@ -20,9 +20,11 @@ def load_function(data_dir, AWS_ACCESS_KEY, AWS_SECRET_KEY, bucket_name, logger)
         ,aws_access_key_id = AWS_ACCESS_KEY
         ,aws_secret_access_key = AWS_SECRET_KEY
     )
+    print('Setup s3 client')
     if len(json_files)>0:
         for file in json_files:
             s3_filename = os.path.basename(file)
+            print('got s3_filename')
             try:
                 s3_client.upload_file(file,bucket_name,s3_filename)
                 os.remove(file)
