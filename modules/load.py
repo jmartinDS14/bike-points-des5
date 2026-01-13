@@ -11,7 +11,9 @@ def load_function(data_dir, AWS_ACCESS_KEY, AWS_SECRET_KEY, bucket_name, logger)
     :param bucket: Description
     :param logger: Description
     '''
+    print('Started load function')
     json_files = list(data_dir.glob('*.json'))
+    print('found JSON')
 
     s3_client = boto3.client(
         's3'
