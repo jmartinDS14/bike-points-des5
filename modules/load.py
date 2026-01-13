@@ -28,7 +28,7 @@ def load_function(data_dir, AWS_ACCESS_KEY, AWS_SECRET_KEY, bucket_name, logger)
                 print(f'{file} uploaded successfully')
             except Exception as e:
                 print(e)
-                logger.error(f'{e}')
+                logger.error(f'Error uploading: {e}')
     else:
         print('No files :(')
         logger.warning('No files :(')
